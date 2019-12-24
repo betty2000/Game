@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-findViews();
+        findViews();
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,12 +31,18 @@ findViews();
                         .setAction("Action", null).show();
             }
         });
-        public void findViewBy        findViewById(R.id.arrow_down).setOnClickListener(this);
+
+
+    }
+
+    private void findViews() {
+        findViewById(R.id.arrow_down).setOnClickListener(this);
         findViewById(R.id.arrow_left).setOnClickListener(this);
         findViewById(R.id.arrow_right).setOnClickListener(this);
         findViewById(R.id.arrow_up).setOnClickListener(this);
-}
+        findViewById(R.id.gameView).setOnClickListener(this);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -64,15 +70,20 @@ findViews();
    switch (view.getId()  ){
        case R.id.arrow_down:
            Log.d("MainActivity", "onClick:down");
+           view.setposY ( view.getposX()+50);
+           view.invalidate;
            break;
        case R.id.arrow_up:
            Log.d("MainActivity", "onClick:up");
+           view.setposY ( view.getposX()+50);
            break;
         case R.id.arrow_left:
         Log.d("MainActivity", "onClick:left");
+         view.setposY ( view.getposX()+50);
         break;
         case R.id.arrow_right:
             Log.d("MainActivity", "onClick:right");
+            view.setposY ( view.getposX()+50);
         break;
 }
 }}
