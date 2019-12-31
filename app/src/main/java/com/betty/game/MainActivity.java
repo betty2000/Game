@@ -16,31 +16,23 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private GameView gameView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         findViews();
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-
-    }
+           }
 
     private void findViews() {
         findViewById(R.id.arrow_down).setOnClickListener(this);
         findViewById(R.id.arrow_left).setOnClickListener(this);
         findViewById(R.id.arrow_right).setOnClickListener(this);
         findViewById(R.id.arrow_up).setOnClickListener(this);
-        findViewById(R.id.gameView).setOnClickListener(this);
+       findViewById(R.id.gameView).setOnClickListener(this);
+
     }
 
     @Override
@@ -67,23 +59,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-   switch (view.getId()  ){
-       case R.id.arrow_down:
-           Log.d("MainActivity", "onClick:down");
-           view.setposY ( view.getposX()+50);
-           view.invalidate;
-           break;
-       case R.id.arrow_up:
-           Log.d("MainActivity", "onClick:up");
-           view.setposY ( view.getposX()+50);
-           break;
-        case R.id.arrow_left:
-        Log.d("MainActivity", "onClick:left");
-         view.setposY ( view.getposX()+50);
-        break;
-        case R.id.arrow_right:
-            Log.d("MainActivity", "onClick:right");
-            view.setposY ( view.getposX()+50);
-        break;
+        switch (view.getId()) {
+            case R.id.arrow_up:
+                Log.d("MainActivity", "onClick: UP");
+                gameView.moveUp();
+                break;
+            case R.id.arrow_down:
+                Log.d("MainActivity", "onClick: DOWN");
+                gameView.moveDown();
+                break;
+            case R.id.arrow_left:
+                Log.d("MainActivity", "onClick: LEFT");
+                gameView.moveLeft();
+                break;
+            case R.id.arrow_right:
+                Log.d("MainActivity", "onClick: RIGHT");
+                gameView.moveRight();
+                break;
 }
 }}

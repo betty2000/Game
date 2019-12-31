@@ -1,0 +1,8 @@
+<root>
+    <item name='android.view.View mFrameMetricsObservers'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+    <item name='android.view.View.AttachInfo mThreadedRenderer'>
+        <annotation name='org.jetbrains.annotations.Nullable' />
+    </item>
+</root>
